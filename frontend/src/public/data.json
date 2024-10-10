@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "price": 699,
+      "category": "Laptops",
+      "rating": 4.5,
+      "imageUrl": "https://example.com/smartphone.jpg",
+      "isNew": true
+    },
+    {
+      "id": 2,
+      "name": "Gaming Laptop",
+      "price": 1499,
+      "category": "Laptops",
+      "rating": 4.8,
+      "imageUrl": "https://example.com/gaming-laptop.jpg",
+      "isNew": false
+    },
+    {
+      "id": 3,
+      "name": "Smartwatch",
+      "price": 199,
+      "category": "Wearables",
+      "rating": 4.2,
+      "imageUrl": "https://example.com/smartwatch.jpg",
+      "isNew": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Laptops"
+    },
+    {
+      "id": 2,
+      "name": "Wearables"
+    },
+    {
+      "id": 3,
+      "name": "Tablets"
+    }
+  ]
+}
