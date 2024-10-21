@@ -114,9 +114,7 @@ body {
     border-radius: 40px 0px 0px 40px;
   }
   
-  #form {
-    width: 690px;
-  }
+  
   .header-search form .input {
     width: calc(100% - 260px);
     margin-right: -4px;
@@ -199,6 +197,9 @@ body {
     font-size: 20px;
     padding-left: 250px;
     
+  }
+  .header-ctn li.nav-toggle {
+    display: none;
   }
   
   /*----------------------------*\
@@ -417,3 +418,143 @@ body {
       max-height: 80px;
     }
   }
+
+  @media only screen and (max-width: 991px) {
+    .header-ctn .menu-toggle {
+      display: inline-block;
+    }
+  }
+
+  .header-ctn .menu-toggle {
+    display: none;
+  }
+
+  /*=========================================================
+	13 -> RESPONSIVE
+===========================================================*/
+
+@media only screen and (max-width: 1201px) {}
+
+@media only screen and (max-width: 991px) {
+  .header-links.pull-left {
+    float: none !important;
+  }
+  .header-links.pull-right {
+    float: none !important;
+    margin-top: 5px;
+  }
+  .header-logo {
+    float: none;
+    text-align: center;
+  }
+  .header-logo .logo {
+    display: inline-block;
+  }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  [class*='col-xs'] {
+    width: 100%;
+  }
+}
+
+/* Global Typography Adjustments */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 90%; /* Scale down headers */
+  }
+
+  body {
+    font-size: 14px; /* Adjust body font size */
+  }
+}
+
+/* Navigation (Main Nav) Responsiveness */
+@media (max-width: 768px) {
+  .main-nav {
+    display: block;
+    text-align: center;
+  }
+  
+  .main-nav > li {
+    display: block;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .main-nav > li > a {
+    padding: 15px;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+/* Brand Showcase Responsiveness */
+@media (max-width: 768px) {
+  .brand-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+  
+  .brand-logo {
+    max-width: 60px;
+    max-height: 60px;
+    margin: 15px;
+  }
+}
+
+/* Hot Deal Section Responsiveness */
+@media (max-width: 768px) {
+  #hot-deal.section {
+    padding: 30px 0;
+    background-size: contain; /* Ensure the image scales properly */
+  }
+  
+  .hot-deal p {
+    font-size: 20px;
+  }
+}
+
+/* Search Bar Responsiveness */
+@media (max-width: 768px) {
+  .header-search form .input {
+    width: 80%; /* Reduce the width */
+  }
+
+  .header-search form .search-btn {
+    width: 50px; /* Adjust button size */
+  }
+}
+
+/* Cart Section Responsiveness */
+@media (max-width: 768px) {
+  .header-ctn > div > a {
+    width: 70px; /* Adjust width of cart icons */
+  }
+
+  .header-ctn > div > a > i {
+    font-size: 16px; /* Adjust icon size */
+  }
+
+  .header-ctn > div > a > span {
+    font-size: 10px; /* Adjust label size */
+  }
+}
+
+/* Flexbox Containers Responsiveness */
+@media (max-width: 768px) {
+  .header-ctn, .brand-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Grid Layout Responsiveness */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack grid items */
+  }
+}
+

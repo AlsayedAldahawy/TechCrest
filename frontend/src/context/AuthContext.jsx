@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useState } from "react";
+
 
 // Create the AuthContext
 export const AuthContext = createContext({
@@ -12,25 +14,48 @@ export const AuthContext = createContext({
 const USERNAME_KEY = "username";
 const TOKEN_KEY = "token";
 
-// AuthProvider component
-const AuthProvider = ({ children }) => {
-  const [username, setUsername] = useState(localStorage.getItem(USERNAME_KEY));
-  const [token, setToken] = useState(localStorage.getItem(TOKEN_KEY));
+// Helper function to safely parse JSON
+const safeJSONParse = (item) => {
+  try {
+    return JSON.parse(item);
+  } catch (error) {
+    return item; // If it's not valid JSON, return the plain string
+  }
+};
 
-  const isAuthenticated = !!token;
+// AuthProvider component
+// eslint-disable-next-line react/prop-types
+const AuthProvider = ({ children }) => {
+  const [username, setUsername] = useState(() => {
+    const storedUsername = localStorage.getItem(USERNAME_KEY);
+    return storedUsername ? safeJSONParse(storedUsername) : null;
+  });
+
+  const [token, setToken] = useState(() => {
+    const storedToken = localStorage.getItem(TOKEN_KEY);
+    return storedToken ? safeJSONParse(storedToken) : null;
+  });
+
+  const [isAuthenticated, setIsAuthenticated] = useState(!!username && !!token);
 
   const login = (username, token) => {
+    // Store the username and token in localStorage as strings
+    localStorage.setItem(USERNAME_KEY, JSON.stringify(username));
+    localStorage.setItem(TOKEN_KEY, JSON.stringify(token));
+
     setUsername(username);
     setToken(token);
-    localStorage.setItem(USERNAME_KEY, username);
-    localStorage.setItem(TOKEN_KEY, token);
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
+    // Remove data from localStorage
     localStorage.removeItem(USERNAME_KEY);
     localStorage.removeItem(TOKEN_KEY);
+
     setUsername(null);
     setToken(null);
+    setIsAuthenticated(false);
   };
 
   return (

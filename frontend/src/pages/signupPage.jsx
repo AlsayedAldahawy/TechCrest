@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import '../styles/login.css'; // Assuming your styles are in the same folder
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext'; // Import useAuth from your context
@@ -64,6 +64,7 @@ const SignupPage = () => {
 
       // Call the login function from AuthContext to log in the user
       login(userName, token);
+      console.log(userName, token)
 
       // If the registration is successful
       setSuccess("Your account has been created successfully!");

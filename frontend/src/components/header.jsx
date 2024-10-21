@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "../styles/Header.css"; // Link to your CSS file (optional)
 import { Link, useNavigate } from 'react-router-dom';
 import SearchDropdown from './searchDropDown.jsx'; // Import the dropdown component
+import { cartContext } from '../context/cartContext.jsx';
+import { wishlistContext } from '../context/wishlistContext.jsx'; // Import wishlist context
 
 const Header = () => {
+  const { cartItems } = useContext(cartContext); // Access cart items
+  const { wishlistItems } = useContext(wishlistContext); // Access wishlist items
   const [searchTerm, setSearchTerm] = useState(''); // For managing the search input
   const [showDropdown, setShowDropdown] = useState(false); // For showing the dropdown
   const navigate = useNavigate(); // Hook to programmatically navigate
@@ -20,6 +24,11 @@ const Header = () => {
     if (searchTerm) {
       navigate(`/search?query=${searchTerm}`); // Navigate to the search page with the query
     }
+  };
+
+  // Function to count total items in the wishlist
+  const countWishlistItems = () => {
+    return wishlistItems.length; // Count the number of items
   };
 
   return (
@@ -70,6 +79,7 @@ const Header = () => {
                     <Link to="/wishlist">
                       <i className="fa fa-heart-o"></i>
                       <span>Your Wishlist</span>
+                      <div className="qty">{countWishlistItems()}</div> {/* Display the count */}
                     </Link>
                   </div>
                   {/* /Wishlist */}
@@ -79,10 +89,10 @@ const Header = () => {
                     <Link to="/cart">
                       <i className="fa fa-shopping-cart"></i>
                       <span>Your Cart</span>
+                      <div className="qty">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</div>
                     </Link>
                   </div>
-                  {/* /Cart */}
-                  
+                  {/* /Cart */} 
                   {/* My Account */}
                   <div>
                     <Link to="/login">
