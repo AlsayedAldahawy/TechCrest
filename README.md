@@ -3,7 +3,9 @@
 
 TechCrest is an online shopping site tailored for electronic devices. It aims to provide a seamless, user-friendly shopping experience, offering a wide range of products from smartphones and laptops to accessories and smart gadgets. The site emphasizes easy navigation, secure transactions, and excellent customer support to meet tech enthusiasts' needs. In essence, TechCrest is designed to be your one-stop shop for all things electronic.
 
+## Authors
 
+- [@Alsayed Aldahawy](https://www.github.com/alsayedaldahawy)
 
 ## Tech Stack
 
