@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage.jsx";
-import AboutUs from "./pages/AboutUS.jsx";
-import ContactUs from "./pages/contactUs.jsx";
 import BrandProducts from "./components/fetchEachBrand.jsx"; 
 import LaptopPage from "./components/laptopPdts.jsx";
 import MobilePage from "./components/mobilePdts.jsx";
@@ -35,13 +33,12 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                   <Route path="/" element={<HomePage />} />
-                  <Route path="aboutus" element={<AboutUs />} />
-                  <Route path="contactus" element={<ContactUs />} />
                   <Route path="login" element={<LoginPage />} />
                   <Route path="signup" element={< Signup />} />
                   <Route path="laptop" element={<LaptopPage />} />
                   <Route path="mobile" element={<MobilePage />} />
                   <Route path="tablet" element={<TabletPage />} />
+                  <Route path="/products/brand/:brandName" element={<BrandProducts />} /> {/* Brand products route */}
                   <Route path="/product/:productId" element={<SingleProductPage />} /> {/* Add SingleProductPage route */}
                   <Route element={<ProtectedRoute />}>
                     <Route path="/cart" element={<CartPage />} />
