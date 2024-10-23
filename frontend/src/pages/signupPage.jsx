@@ -72,7 +72,7 @@ const SignupPage = () => {
       // Optionally, navigate the user to the login page after a short delay
       setTimeout(() => {
         navigate("/login");
-      }, 5000); // Navigate after 3 seconds
+      }, 2000); // Navigate after 3 seconds
 
     } catch (error) {
       setError("Something went wrong. Please try again.");

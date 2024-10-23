@@ -72,7 +72,7 @@ const LoginPage = () => {
     setIsLoggedIn(false);
     setCurrentUser(''); // Clear the user
     alert('You have been logged out.');
-    location.reload()
+    location.reload() // relode page to make the browser drop the token
     navigate('/'); // Redirect to home after logout
   };
 
