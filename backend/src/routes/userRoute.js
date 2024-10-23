@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/register", async (request, response) => {
   try {
     const { userName, email, password } = request.body;
-    console.log(request.body);
+    // console.log(request.body);
     const { statusCode, data } = await register({
       userName,
       email,
