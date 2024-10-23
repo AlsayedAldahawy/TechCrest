@@ -76,10 +76,6 @@ This setup should get you up and running with TechCrest on your local machine.
 
 ![img](https://i.ibb.co/VCy5vFQ/Screenshot-2024-10-22-064912.png)
 
-- Now go to your browser and go to the following link: http://localhost:5173/
-
-![img](https://i.ibb.co/VCy5vFQ/Screenshot-2024-10-22-064912.png)
-
 ## Features
 
 - Hot Deal
