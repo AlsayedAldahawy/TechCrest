@@ -52,9 +52,9 @@ const SearchDropdown = ({ searchTerm }) => {
       ref={dropdownRef} // Attach ref to dropdown
       sx={{
         position: 'absolute',
-        zIndex: 10,
+        zIndex: 3,
         backgroundColor: '#fff',
-        width: '100%',
+        width: '370px',
         border: '1px solid #ddd', // Optional: add border for better visibility
         borderRadius: '4px', // Optional: rounded corners
         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)', // Add shadow for depth
