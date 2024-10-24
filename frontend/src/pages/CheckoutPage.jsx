@@ -2,7 +2,7 @@ import { useContext, useMemo, useState } from "react";
 import { Button, Container, Stack, Alert, Table, Form } from "react-bootstrap";
 import React from "react";
 import { cartContext } from "../context/cartContext"; // Import the cartContext
-import '../styles/Checkout.css'
+import '../styles/checkout.css'
 import { AuthContext } from "../context/AuthContext"; // Import the authContext
 
 function CheckoutPage() {

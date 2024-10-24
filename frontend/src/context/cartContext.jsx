@@ -72,7 +72,7 @@ export const CartProvider = ({ children }) => {
 
   // Fetch products from the backend when the component mounts
   useEffect(() => {
-    axios.get("http://localhost:5000/products").then((response) => {
+    axios.get("http://64.227.119.208:5000/products").then((response) => {
       const backendData = response.data;
       const frontendData = backendData.map((item) => ({
         ...item,

@@ -14,7 +14,7 @@ const BrandProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/products/brand/${brandName}`); // Updated URL to fetch by brand
+        const response = await fetch(`http://64.227.119.208:5000/products/brand/${brandName}`); // Updated URL to fetch by brand
         if (!response.ok) {
           throw new Error("Failed to fetch products.");
         }

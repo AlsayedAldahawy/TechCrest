@@ -13,11 +13,12 @@ const app = express()
 const port = 5000;
 
 app.use(express.json())
-app.use(cors());
-
+app.use(cors({
+    origin: 'http://64.227.119.208'
+  }));
 
 mongoose
-    .connect('mongodb://localhost:27017/TechCrest')
+    .connect('mongodb://64.227.119.208:27017/TechCrest')
     .then(() => console.log('Mongo Connected Successfully!'))
     .catch((err) => console.log('Failed to connect to MongoDB', err));
 

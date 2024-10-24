@@ -16,7 +16,7 @@ const SearchResults = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products'); // Adjust the API endpoint
+        const response = await fetch('http://64.227.119.208:5000/products'); // Adjust the API endpoint
         const data = await response.json();
         setProducts(data);
       } catch (error) {

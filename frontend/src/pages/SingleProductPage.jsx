@@ -25,7 +25,7 @@ const SingleProductPage = () => {
   useEffect(() => {
     const fetchProductById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/products/${productId}`);
+        const response = await axios.get(`http://64.227.119.208:5000/products/${productId}`);
         setSelectedProduct(response.data);
       } catch (error) {
         console.error("Failed to fetch product", error);

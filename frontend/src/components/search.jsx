@@ -9,7 +9,7 @@ const Search = ({ searchTerm }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products'); // Adjust to your API
+        const response = await fetch('http://l64.227.119.208:5000/products'); // Adjust to your API
         const data = await response.json();
         setProducts(data);
       } catch (error) {

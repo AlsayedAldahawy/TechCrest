@@ -15,7 +15,7 @@ const TabletPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products/category/tablet');
+        const response = await fetch('http://64.227.119.208:5000/products/category/tablet');
         const data = await response.json();
         setProducts(data);
       } catch {

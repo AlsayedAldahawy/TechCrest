@@ -38,7 +38,7 @@ const SignupPage = () => {
 
     // Make the call to API to create the user
     try {
-      const response = await fetch("http://localhost:5000/user/register", {
+      const response = await fetch("http://64.227.119.208:5000/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
