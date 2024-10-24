@@ -20,12 +20,14 @@ const deals = [
 ];
 
 const HotDeal = () => {
+
+    const now = new Date();
     const [deal, setDeal] = useState(null); // Deal can be null initially
     const [countdown, setCountdown] = useState({
-        days: 1,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        days: 0,
+        hours: 24 - now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getSeconds(),
     });
     
     const navigate = useNavigate(); // Navigation hook
